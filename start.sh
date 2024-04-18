@@ -1,12 +1,12 @@
 #!/bin/bash
-export UUID=${UUID:-'2243a0cc-060d-4bcc-b12c-44fc2b3842d8'}
+export UUID=${UUID:-'128062df-0918-4b89-a141-843ad6be7533'}
 export NEZHA_SERVER=${NEZHA_SERVER:-''}
 export NEZHA_PORT=${NEZHA_PORT:-'5555'} # 哪吒端口为{443,8443,2096,2087,2083,2053}其中之一时开启tls
 export NEZHA_KEY=${NEZHA_KEY:-''}
 export ARGO_DOMAIN=${ARGO_DOMAIN:-''}
 export ARGO_AUTH=${ARGO_AUTH:-''}
 export CFIP=${CFIP:-'www.visa.com.tw'}
-export NAME=${NAME:-'MC'}
+export NAME=${NAME:-'xxxx'}
 export FILE_PATH=${FILE_PATH:-'./data'}
 export ARGO_PORT=${ARGO_PORT:-'8001'} 
 
