@@ -29,11 +29,14 @@ jobs:
           node-version: lts/*
 
       - name: Install step
-        run: "deno install --allow-read --allow-write --unstable --name=myapp index.ts"
+        run: "npm install"
+
+      - name: Build step
+        run: "npm run build"
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "ohyoxo-typescript-67"
-          entrypoint: "start.sh"
+          project: "ohyoxo-typescript-51"
+          entrypoint: "index.ts"
           root: ""
