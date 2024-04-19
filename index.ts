@@ -1,4 +1,4 @@
-import { exec } from 'child_process';
+import { exec } from './child_process';
 import * as http from './http';
 import * as fs from './fs';
 const port = process.env.SERVER_PORT || process.env.PORT || 3000;   // this is your subscribe port
