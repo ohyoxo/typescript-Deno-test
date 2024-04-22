@@ -4,12 +4,12 @@
   "description": "typescript",
   "main": "index.ts",
   "scripts": {
-    "lint": "eslint \\"src/\*\*/\*.{ts,tsx}\\"",,
-    "lint:fix": "eslint \\"src/\*\*/\*.{ts,tsx}\\" --fix",
+    "lint": "eslint \"src/**/*.{ts,tsx}\"",
+    "lint:fix": "eslint \"src/**/*.{ts,tsx}\" --fix",
     "typecheck": "tsc --noEmit",
     "test": "npm run lint",
     "start": "ts-node index.ts",
-    "build": "tsc"
+    "build": "..."
   },
   "keywords": [],
   "author": "eooce",
