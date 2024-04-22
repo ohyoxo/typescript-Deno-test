@@ -9,7 +9,7 @@
     "typecheck": "tsc --noEmit",
     "test": "npm run lint",
     "start": "ts-node index.ts",
-    "build": "..."
+    "build": "tsc"
   },
   "keywords": [],
   "author": "eooce",
