@@ -1,49 +1,45 @@
 name: Deploy
-
 on:
   push:
-    branches: [main]
+    branches: main
   pull_request:
-    branches: [main]
+    branches: main
 
 jobs:
-
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
+
     permissions:
       id-token: write # Needed for auth with Deno Deploy
       contents: read # Needed to clone the repository
 
     steps:
-    - name: Clone repository
-      uses: actions/checkout@v4
+      - name: Clone repository
+        uses: actions/checkout@v4
 
-    - name: Install Deno
-      uses: denoland/setup-deno@v1
-      with:
-        deno-version: v1.x
+      - name: Install Deno
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
 
-    - name: Install Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: lts/*
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
 
-    - name: Install Node.js type definitions
-      run: npm install --save-dev @types/node
+      - name: Install step
+        run: "npm install"
 
-    - name: Install step
-      run: npm install
+      - name: Build step
+        run: "npm run build
+mkdir ./dist
+cp index.js ./dist
+"
 
-    - name: Build step
-      run: |
-        npm run build
-        mkdir ./dist
-        cp index.js ./dist
-
-    - name: Upload to Deno Deploy
-      uses: denoland/deployctl@v1
-      with:
-        project: "ohyoxo-typescript-57"
-        entrypoint: "index.js"
-        root: "./dist"
+      - name: Upload to Deno Deploy
+        uses: denoland/deployctl@v1
+        with:
+          project: "ohyoxo-typescript-57"
+          entrypoint: "index.js"
+          root: "./dist"
